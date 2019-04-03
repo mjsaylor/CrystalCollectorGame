@@ -1,0 +1,12 @@
+.crystal {
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin: 30px;
+}
+
+img {
+    width: auto;
+    height: 100%;
+}
+

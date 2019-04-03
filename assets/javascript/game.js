@@ -50,15 +50,21 @@ function gameSetUp() {
     assignCrystalValues();
     assignGivenNumber();
     $("#given-number").text(givenNumber);
+    $(".running-total").text(runningTotal);
 }
 
 gameSetUp();
 
 // player clicks crystal
 
+
 $(".crystal").on("click", function() {
+    console.log("THIS: " + this)
+   var crystalValue = $(this).attr
+   console.log(crystalValue);
 // value is added to runningTotal score; displayed
-runningTotal = 
+runningTotal += crystalValue;
+// $(".running-total").text(runningTotal);
     // check - is runningTotal less than givenNumber?
         // if runningTotal is less, player clicks another crystal
         // if runningTotal is more, player loses
@@ -67,7 +73,7 @@ runningTotal =
             //runningTotal is reset to 0
         // if runningTotal is equal to givenNumber, player wins
             // wins counter +1
-}
+})
     
             // new random values assigned to crystals and givenNumber
             // runningTotal is reset to 0
