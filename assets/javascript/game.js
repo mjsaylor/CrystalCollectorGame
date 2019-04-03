@@ -27,7 +27,7 @@ function assignCrystalValues() {
     console.log(crystalValue_1, crystalValue_2, crystalValue_3, crystalValue_4);
 }
 
-function assignGivenNumber () {
+function assignGivenNumber() {
     givenNumber = givenNumberArray[Math.floor(Math.random() * givenNumberArray.length)];
     console.log("GIVEN NUMBER: ", givenNumber)
 }
@@ -41,20 +41,24 @@ var numberWins = 0;
 var numberLosses = 0;
 // html divs
 // setup
+// runningTotal is 0 
+// randomly assign crystal values
+// randomly assign given number
+// display number
 function gameSetUp() {
     runningTotal = 0;
     assignCrystalValues();
     assignGivenNumber();
+    $("#given-number").text(givenNumber);
 }
 
 gameSetUp();
-    
-    // runningTotal is 0 
-    // randomly assign crystal values
-    // randomly assign given number
-    // display number
+
 // player clicks crystal
-    // value is added to runningTotal score; displayed
+
+$(".crystal").on("click", function() {
+// value is added to runningTotal score; displayed
+runningTotal = 
     // check - is runningTotal less than givenNumber?
         // if runningTotal is less, player clicks another crystal
         // if runningTotal is more, player loses
@@ -63,6 +67,8 @@ gameSetUp();
             //runningTotal is reset to 0
         // if runningTotal is equal to givenNumber, player wins
             // wins counter +1
+}
+    
             // new random values assigned to crystals and givenNumber
             // runningTotal is reset to 0
 
