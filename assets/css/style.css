@@ -3,7 +3,7 @@ font-family: 'Righteous', cursive;
 font-family: 'Sacramento', cursive;
 font-family: 'Tangerine', cursive; */
 body {
-    
+    background-color: #E0BAD7;
 }
 
 header {
@@ -19,9 +19,29 @@ header {
 }
 
 h1 {
-    color: #C8BFC7;
+    color: #8EA4D2;
     font-size: 72px;
     text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+}
+
+.instructions {
+    margin: 30px auto;
+    width: 960px;
+    background-color: #FEFFBE;
+    padding: 20px;
+    color: #564D80;
+    border: 3px solid #564D80;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 18px;
+}
+
+.scores {
+    width: 50%;
+    float: left;
+    height: 60px;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
 }
 
 .crystal {
@@ -32,7 +52,29 @@ h1 {
 }
 
 .crystal-container {
+    width: 960px;
     background-color: #8b7288;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.win-lose {
+    width: 100%;
+
+}
+.wins-losses {
+    width: 960px;
+    float: left;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+}
+
+#wins,
+#losses {
+    width: 480px;
+    float:left;
 }
 
 img {

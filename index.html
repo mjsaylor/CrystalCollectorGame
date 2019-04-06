@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>CrystalsCollector</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Courgette|Righteous|Sacramento|Tangerine" rel="stylesheet">
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 </head>
@@ -21,22 +22,26 @@
         <div class="instructions">
             <p>You will be given a random number at the start of the game.
             </p>
+            <br>
             <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
                 total score.
             </p>
+            <br>
             <p>
                 You win the game by matching your total score to the random number. You lose the game if your total
                 score goes above the random number.
             </p>
+            <br>
             <p>
                 The value of each crystal is hidden from you until you click on it.
             </p>
+            <br>
             <p>
                 Each time when the game starts, the game will change the values of each crystal.
             </p>
         </div>
-        <div>Running Total: <span id="running-total"></span></div>
-        <div>Target Number: <span id="given-number"></span></div>
+        <div class="scores">Target Number: <span id="given-number"></span></div>
+        <div class="scores">Running Total: <span id="running-total"></span></div>
         <div class="crystal-container">
             <div class="crystal" id="crystal1"><img src="assets/images/crystalimage1.png"></div>
             <div class="crystal" id="crystal2"><img src="assets/images/crystalimage2.png"></div>
@@ -44,9 +49,12 @@
             <div class="crystal" id="crystal4"><img src="assets/images/crystalimage4.png"></div>
 
         </div>
-        <div>Wins: <span id="wins"></span></div>
-        <div>Losses:<span id="losses"></span></div>
-        <div id="win-lose"></div>
+        <div class="win-lose"></div>
+        <div class="wins-losses">
+            <div>Wins: <span id="wins"></span></div>
+            <div>Losses:<span id="losses"></span></div>
+        </div>
+    </div>
 
     </div>
 
