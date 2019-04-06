@@ -1,34 +1,36 @@
 // create variables
-function range(start, end) {
-    var myArray = [];
-    for (var i = start; i <= end; i += 1) {
-        myArray.push(i);
-    }
-    return myArray;
-};
-
 // 4 random crystal values array; 1-12
 var crystalValue_1;
 var crystalValue_2;
 var crystalValue_3;
 var crystalValue_4;
-var crystalValuesArray = range(1, 12);
-console.log(crystalValuesArray);
 // Random given number array; 19-120
 var givenNumber;
-var givenNumberArray = range(19, 120);
-console.log(givenNumberArray);
+
+function randomNumber(multiplier) {
+    return Math.ceil(Math.random() * multiplier)
+}
 
 function assignCrystalValues() {
-    crystalValue_1 = crystalValuesArray[Math.floor(Math.random() * crystalValuesArray.length)];
-    crystalValue_2 = crystalValuesArray[Math.floor(Math.random() * crystalValuesArray.length)];
-    crystalValue_3 = crystalValuesArray[Math.floor(Math.random() * crystalValuesArray.length)];
-    crystalValue_4 = crystalValuesArray[Math.floor(Math.random() * crystalValuesArray.length)];
+    var crystalValues = [];
+    var crystalValue;
+    for (var i = 0; i < 4; i++) {
+        do {
+            crystalValue = randomNumber(12);
+        } while (crystalValues.includes(crystalValue))
+        crystalValues.push(crystalValue)
+    }
+
+
+    crystalValue_1 = crystalValues[0];
+    crystalValue_2 = crystalValues[1];
+    crystalValue_3 = crystalValues[2];
+    crystalValue_4 = crystalValues[3];
     console.log(crystalValue_1, crystalValue_2, crystalValue_3, crystalValue_4);
 }
 
 function assignGivenNumber() {
-    givenNumber = givenNumberArray[Math.floor(Math.random() * givenNumberArray.length)];
+    givenNumber = randomNumber(101) + 18;
     console.log("GIVEN NUMBER: ", givenNumber)
 }
 
@@ -49,6 +51,10 @@ function gameSetUp() {
     runningTotal = 0;
     assignCrystalValues();
     assignGivenNumber();
+    $("#crystal1").attr("crystal-value", crystalValue_1);
+    $("#crystal2").attr("crystal-value", crystalValue_2);
+    $("#crystal3").attr("crystal-value", crystalValue_3);
+    $("#crystal4").attr("crystal-value", crystalValue_4);
     $("#given-number").text(givenNumber);
     $(".running-total").text(runningTotal);
 }
@@ -58,23 +64,34 @@ gameSetUp();
 // player clicks crystal
 
 
-$(".crystal").on("click", function() {
-    console.log("THIS: " + this)
-   var crystalValue = $(this).attr
-   console.log(crystalValue);
-// value is added to runningTotal score; displayed
-runningTotal += crystalValue;
-// $(".running-total").text(runningTotal);
+$(".crystal").on("click", function (event) {
+    console.log($(this).attr("crystal-value"))
+    // value is added to runningTotal score; displayed
+    runningTotal += parseInt($(this).attr("crystal-value"));
+    $(".running-total").text(runningTotal);
     // check - is runningTotal less than givenNumber?
-        // if runningTotal is less, player clicks another crystal
-        // if runningTotal is more, player loses
-            //losses counter +1
-            //new random values assigned to crystals and givenNumber
-            //runningTotal is reset to 0
-        // if runningTotal is equal to givenNumber, player wins
-            // wins counter +1
+    if (runningTotal == givenNumber) {
+        console.log("YOU WIN")
+        numberWins++
+        $("#win-lose").html($("<h2>").text("WINNERRRRRR"));
+        $("#wins").text(numberWins);
+        gameSetUp();
+    } else if (runningTotal > givenNumber) {
+        console.log("YOU LOSE")
+        numberLosses++
+        $("#win-lose").html($("<h2>").text("LOSERRRRR"));
+        $("#losses").text(numberLosses);
+        gameSetUp();
+    }
+    // if runningTotal is less, player clicks another crystal
+    // if runningTotal is more, player loses
+    //losses counter +1
+    //new random values assigned to crystals and givenNumber
+    //runningTotal is reset to 0
+    // if runningTotal is equal to givenNumber, player wins
+    // wins counter +1
 })
-    
+
             // new random values assigned to crystals and givenNumber
             // runningTotal is reset to 0
 
