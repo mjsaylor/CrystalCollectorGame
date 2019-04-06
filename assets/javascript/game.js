@@ -56,7 +56,7 @@ function gameSetUp() {
     $("#crystal3").attr("crystal-value", crystalValue_3);
     $("#crystal4").attr("crystal-value", crystalValue_4);
     $("#given-number").text(givenNumber);
-    $(".running-total").text(runningTotal);
+    $("#running-total").text(runningTotal);
 }
 
 gameSetUp();
@@ -68,7 +68,6 @@ $(".crystal").on("click", function (event) {
     console.log($(this).attr("crystal-value"))
     // value is added to runningTotal score; displayed
     runningTotal += parseInt($(this).attr("crystal-value"));
-    $(".running-total").text(runningTotal);
     // check - is runningTotal less than givenNumber?
     if (runningTotal == givenNumber) {
         console.log("YOU WIN")
