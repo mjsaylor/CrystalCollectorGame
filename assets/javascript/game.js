@@ -73,13 +73,13 @@ $(".crystal").on("click", function (event) {
     if (runningTotal == givenNumber) {
         console.log("YOU WIN")
         numberWins++
-        $(".win-lose").html($("<h2>").text("You Won!"));
+        $(".win-lose-message").html($("<h2>").text("You Won!"));
         $("#wins").text(numberWins);
         gameSetUp();
     } else if (runningTotal > givenNumber) {
         console.log("YOU LOSE")
         numberLosses++
-        $(".win-lose").html($("<h2>").text("You Lost!"));
+        $(".win-lose-message").html($("<h2>").text("You Lost!"));
         $("#losses").text(numberLosses);
         gameSetUp();
     }
@@ -90,6 +90,11 @@ $(".crystal").on("click", function (event) {
     //runningTotal is reset to 0
     // if runningTotal is equal to givenNumber, player wins
     // wins counter +1
+})
+//can clear away the instructions to make visual layout more appealing during gameplay
+$("#closebutton").on("click", function(event) {
+    $(".instructions").hide();
+
 })
 
             // new random values assigned to crystals and givenNumber
