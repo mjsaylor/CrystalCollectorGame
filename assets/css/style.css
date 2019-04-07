@@ -27,6 +27,7 @@ h1 {
 .game-container {
     display: flex;
     flex-direction: column;
+    grid-gap: 3rem;
 }
 
 .instructions {
@@ -55,74 +56,73 @@ h3 {
 }
 
 .scores-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 3rem;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 60px;
-    font-size: 30px;
     text-align: center;
     font-family: 'Exo 2', sans-serif;
-    margin: 30px 0;
+    align-items: stretch;
+
 }
 .scores {
-    margin: 30px;
-    width: 450px;
-    height: 60px;
-    font-size: 40px;
+    font-size: 2rem;
     text-align: center;
     font-family: 'Exo 2', sans-serif;
     background-color: #FEFFBE;
     border: 3px solid #564D80;
     border-radius: 8px;
-    padding-top: 10px;
+    margin: 1rem;
+    padding: 1rem;
 }
 
-.crystal {
-    height: 110px;
-    width: 110px;
-    margin: 30px;
-    flex-grow: 1;
-    background: radial-gradient(#fff 0%,#E0BAD7 60%)
+.stat-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.stats{
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+    background-color: #FEFFBE;
+    border: 3px solid #564D80;
+    border-radius: 8px;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 .crystal-container {
-    display: flex;
-    width: 960px;
-    text-align: center;
-    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    width: 100%;
+    grid-gap: 3rem;
+  
 }
+.crystal {
+    height: 110px;
+    width: 110px;
+    background: radial-gradient(#fff 0%,#E0BAD7 60%);
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 
 .win-lose-message {
     width: 100%;
     text-align: center;
     font-size: 60px;
     font-family: 'Exo 2', sans-serif;
-
-}
-.stat-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 60px;
-    font-size: 30px;
-    text-align: center;
-    font-family: 'Exo 2', sans-serif;
 }
 
-.stats{
-    margin: 30px;
-    width: 450px;
-    height: 60px;
-    font-size: 40px;
-    text-align: center;
-    font-family: 'Exo 2', sans-serif;
-    background-color: #FEFFBE;
-    border: 3px solid #564D80;
-    border-radius: 8px;
-    padding-top: 10px;
-}
 
 img {
     width: auto;
