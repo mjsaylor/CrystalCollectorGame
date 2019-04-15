@@ -2,7 +2,7 @@
 Secret-number guessing game utilizing JavaScript and jQuery.
 
 ## How to Play
-Browser-based word guessing game. Computer randomly selects a secret title of a Broadway show. Player guesses letters using keyboard. Player wins if they correctly complete title of show. Player loses if 8 incorrect guesses are made before title is complete.
+Browser-based number guessing game. Computer randomly selects a value that is displayed for user to see. User clicks on images of crystals to determine secret randomly assigned values based on its value being added to the running total. Running total should equal the displayed number exactly to win. If running total is higher than the displayed number, user loses game.
 
 ### Created Using
 HTML,
